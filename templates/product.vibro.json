@@ -1,0 +1,9 @@
+{
+    "name": "Product Vibro",
+    "sections": {
+        "main": {
+            "type": "main-product-vibro"
+        }
+    },
+    "order": ["main"]
+}

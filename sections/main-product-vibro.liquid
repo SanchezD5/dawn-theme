@@ -1,0 +1,27 @@
+<div class="product-vibro-page">
+  <!-- Galería de imágenes -->
+  <div class="vibro-gallery">
+    {% for media in product.media %}
+      <img src="{{ media | image_url: '800x' }}" alt="{{ media.alt | escape }}">
+    {% endfor %}
+  </div>
+
+  <!-- Información del producto -->
+  <div class="vibro-info">
+    <h1>{{ product.title }}</h1>
+    {% render 'price', product: product %}
+    <p>⭐ 987 Reviews</p>
+  </div>
+
+  <!-- Formulario de compra -->
+  <form method="post" action="/cart/add">
+    <select name="id">
+      {% for v in product.variants %}
+        <option value="{{ v.id }}">{{ v.title }} - {{ v.price | money }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Add to cart</button>
+  </form>
+</div>
+
+{{ 'component-vibro.css' | asset_url | stylesheet_tag }}

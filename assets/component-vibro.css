@@ -1,0 +1,12 @@
+.product-vibro-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.vibro-gallery img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.vibro-info {
+  padding: 20px 0;
+}
