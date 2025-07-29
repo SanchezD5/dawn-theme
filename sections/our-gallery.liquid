@@ -1,0 +1,51 @@
+{% schema %}
+{
+  "name": "Our Gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Our Gallery"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "gallery_image",
+      "name": "Galley Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 12,
+  "presets": [
+    {
+      "name": "Our Gallery",
+      "blocks": [{ "type": "gallery_image" }, { "type": "gallery_image" }, { "type": "gallery_image" }]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="gallery-section">
+  <div class="gallery-container">
+    <h2 class="gallery-title">{{ section.settings.section_title }}</h2>
+    <div class="gallery-grid">
+      {% for block in section.blocks %}
+        {% if block.settings.image != blank %}
+          <div class="gallery-item">
+            <img src="{{ block.settings.image | image_url: width: 800}}" alt="Gallery Image">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+{{ 'our-gallery.css' | asset_url | stylesheet_tag }}

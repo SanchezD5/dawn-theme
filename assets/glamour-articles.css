@@ -1,0 +1,95 @@
+.glamour-articles-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.articles-header {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.articles-label {
+  font-size: 14px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.articles-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.articles-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  color: #222;
+}
+
+.articles-button {
+  display: inline-block;
+  padding: 10px 22px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.articles-button:hover {
+  background-color: #333;
+}
+
+.articles-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.article-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.article-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.article-text {
+  padding: 20px;
+  font-size: 16px;
+  color: #b3b3b3;
+  flex-grow: 1;
+}
+
+.article-read {
+  padding: 0 20px 20px 20px;
+  font-size: 14px;
+  color: #007aff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.article-read:hover {
+  text-decoration: underline;
+}

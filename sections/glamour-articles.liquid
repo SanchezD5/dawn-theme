@@ -1,0 +1,89 @@
+{% schema %}
+{
+  "name": "Glamour Articles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Section Label",
+      "default": "News"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Lastest Articles"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Explore"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article_card",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Article Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Description",
+          "default": "Sed nec lorem scelerisque, viverra ex ut, interdum massa."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Read More Link"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Glamour Articles"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="glamour-articles-section">
+  <div class="articles-header">
+    <p class="articles-label">{{ section.settings.section_label }}</p>
+    <div class="articles-title-bar">
+      <h2 class="articles-title">{{ section.settings.title }}</h2>
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link }}" class="articles-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="articles-grid">
+    {% for block in section.blocks %}
+      <div class="article-card">
+        {% if block.settings.image != blank %}
+          <img src="{{ block.settings.image | image_url: width: 600 }}" alt="article-image">
+        {% endif %}
+        <p class="article-text">{{ block.settings.text }}</p>
+        <a href="{{ block.settings.link }}" class="article-read">Read</a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{{ 'glamour-articles.css' | asset_url | stylesheet_tag }}

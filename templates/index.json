@@ -1,86 +1,131 @@
 {
   "sections": {
-  
     "main-hero": {
       "type": "glamour-hero",
       "settings": {
         "heading": "Descrubre una experiencia unica al aire libre",
-        "subheading":"Explora nuestro exclusivo campamneto de lujo",
-        "button_label":"Reserva ahora",
-        "button_link": "#"
+        "subheading": "Explora nuestro exclusivo campamneto de lujo",
+        "button_label": "Reserva ahora",
+        "button_link": ""
       }
     },
-
     "glamour-intro": {
       "type": "glamour-intro",
       "settings": {
-"section_label": "ABOUT",
-"main_title": "Welcome To Glamour Camping Ground",
-"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer egestas nisi nec libero fermentum, a varius tortor venenatis. Sed vitae dolor interdum."
-
+        "section_label": "ABOUT",
+        "main_title": "Welcome To Glamour Camping Ground",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer egestas nisi nec libero fermentum, a varius tortor venenatis. Sed vitae dolor interdum."
       }
     },
-
     "activity-icons": {
       "type": "activity-icons"
     },
     "booking": {
-  "type": "booking-grid",
-  "settings": {
-    "subtitle": "Booking",
-    "title": "Book Your Dream Vacation Now"
-  },
-  "blocks": {
-    "block-1": {
-      "type": "booking_item",
+      "type": "booking-grid",
       "settings": {
-        "image": "",
-        "title": "Bell Glamp One",
-        "details": "10 Persons | 25m2",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
-        "button_text": "Check Availability",
-        "button_link": "#"
-      }
+        "subtitle": "Booking",
+        "title": "Book Your Dream Vacation Now"
+      },
+      "blocks": {
+        "block-1": {
+          "type": "booking_item",
+          "settings": {
+            "image": "",
+            "title": "Bell Glamp One",
+            "details": "10 Persons | 25m2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
+            "button_text": "Check Availability",
+            "button_link": ""
+          }
+        },
+        "block-2": {
+          "type": "booking_item",
+          "settings": {
+            "image": "",
+            "title": "Caravan Solar Tent",
+            "details": "2-6 Persons | 27m²",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
+            "button_text": "Check Availability",
+            "button_link": ""
+          }
+        },
+        "block-3": {
+          "type": "booking_item",
+          "settings": {
+            "image": "",
+            "title": "Glamping Tent",
+            "details": "1-6 Persons | 16m²",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
+            "button_text": "Check Availability",
+            "button_link": ""
+          }
+        },
+        "block-4": {
+          "type": "booking_item",
+          "settings": {
+            "image": "",
+            "title": "Small Cabin Wood",
+            "details": "1-6 Persons | 25m²",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
+            "button_text": "Check Availability",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": ["block-1", "block-2", "block-3", "block-4"]
     },
-    "block-2": {
-      "type": "booking_item",
+    "glamour-articles": {
+      "type": "glamour-articles",
       "settings": {
-        "image": "",
-        "title": "Caravan Solar Tent",
-        "details": "2-6 Persons | 27m²",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
-        "button_text": "Check Availability",
-        "button_link": "#"
-      }
+        "section_label": "News",
+        "title": "Lastest Articles",
+        "button_label": "Explore",
+        "button_link": ""
+      },
+      "blocks": {
+        "block-1": {
+          "type": "article_card",
+          "settings": {
+            "image": "",
+            "text": "Sed nec lorem scelerisque, viverra ex ut, interdum massa.",
+            "link": ""
+          }
+        },
+        "block-2": {
+          "type": "article_card",
+          "settings": {
+            "image": "",
+            "text": "Morbi ligula massa, posuere in finibus ut, varius ac ligula.",
+            "link": ""
+          }
+        },
+        "block-3": {
+          "type": "article_card",
+          "settings": {
+            "image": "",
+            "text": "Sed nec lorem scelerisque, viverra ex ut, interdum massa.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": ["block-1", "block-2", "block-3"]
     },
-    "block-3": {
-      "type": "booking_item",
+    "our-gallery": {
+      "type": "our-gallery",
       "settings": {
-        "image": "",
-        "title": "Glamping Tent",
-        "details": "1-6 Persons | 16m²",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
-        "button_text": "Check Availability",
-        "button_link": "#"
-      }
-    },
-    "block-4": {
-      "type": "booking_item",
-      "settings": {
-        "image": "",
-        "title": "Small Cabin Wood",
-        "details": "1-6 Persons | 25m²",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum vel justo.",
-        "button_text": "Check Availability",
-        "button_link": "#"
-      }
+        "section_title": "Our Gallery"
+      },
+      "blocks": {},
+      "block_order": []
     }
-  },
-  "block_order": ["block-1", "block-2", "block-3", "block-4"]
-}
 
   },
   "order": [
-    "main-hero", "glamour-intro", "activity-icons", "booking"
+    "main-hero",
+    "glamour-intro",
+    "activity-icons",
+    "booking",
+    "glamour-articles",
+    "our-gallery"
   ]
 }
