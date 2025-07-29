@@ -3,7 +3,17 @@
     "sections": {
         "main": {
             "type": "main-product-vibro"
+        },
+        "testimonials": {
+            "type": "vibro-testimonials"
+        },
+        "testimonials_advanced": {
+            "type": "vibro-testimonials-advanced"
+        },
+
+        "faq": {
+            "type": "vibro-faq"
         }
     },
-    "order": ["main"]
+    "order": ["main", "testimonials", "testimonials_advanced", "faq"]
 }

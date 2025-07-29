@@ -1,0 +1,59 @@
+{% schema %}
+{
+  "name": "Productos en Tendencia",
+  "tag": "section",
+  "class": "trending-products-wrapper",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "producto",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Seleccionar producto"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Productos en Tendencia",
+      "blocks": [
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="trending-products">
+  <h2 class="section-title">Productos en Tendencia</h2>
+  <div class="products-grid">
+    {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
+      {% if product %}
+        <div class="product-card">
+          <a href="{{product.url }}">
+            <img src="{{ product.featured_image | image_url: width: 500 }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+            <p>{{ product.price | money }}</p>
+          </a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+
+{{ 'trending-products.css' | asset_url | stylesheet_tag }}

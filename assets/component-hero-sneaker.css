@@ -1,0 +1,76 @@
+.hero-sneaker {
+position: relative;
+width: 100%;
+height: auto;
+overflow: hidden;
+}
+
+.hero-sneaker .hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-sneaker .hero-content {
+    position: absolute;
+    top: 15%;
+    left: 1%;
+    transform: translateY(-50%);
+    color: rgb(160, 57, 57);
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+    z-index: 2;
+    max-width: 40%;
+}
+
+.hero-sneaker .hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.hero-sneaker .hero-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.hero-sneaker .hero-button:hover {
+    background-color: #ff6868;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .hero-sneaker {
+        height: auto;
+    }
+
+    .hero-sneaker .hero-image {
+        height: auto;
+        object-fit: contain;
+    }
+
+    .hero-sneaker .hero-content {
+        position: static;
+        transform: none;
+        padding: 1rem;
+        max-height: 100%;
+        text-align: center;
+    }
+
+    .hero-sneaker .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-sneaker .hero-button {
+        margin-top: 1rem;
+    }
+
+}
+

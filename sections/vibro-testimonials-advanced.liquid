@@ -1,0 +1,134 @@
+{% schema %}
+{
+  "name": "Testimonios Avanzados",
+  "tag": "section",
+  "class": "vibro-testimonials-advanced",
+  "max_blocks": 6,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonio",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "photo",
+          "label": "Foto del cliente"
+        },
+        {
+        "type": "text",
+        "id": "name",
+        "label": "Nombre del cliente"
+        },
+        {
+        "type": "textarea",
+        "id": "testimonial",
+        "label": "Testimonio"
+        },
+        {
+        "type": "range",
+        "id": "stars",
+        "label": "Calificacion",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+    "name": "Testimonios Avanzados",
+    "category": "Testimonios"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="testimonials-advanced-container">
+    {% for block in section.blocks %}
+        <div class="testimonial-card">
+            {% if block.settings.photo != blank %}
+                <img class="testimonial-photo" src="{{ block.settings.photo | image_url: width: 200 }}" alt="Foto de {{ block.settings.name }}">
+            {% endif %}
+            <div class="testimonial-content">
+                <h3>{{ block.settings.name }}</h3>
+                <div class="stars">
+                    {% for i in (1..block.settings.stars) %}
+                        <span>⭐</span>
+                    {% endfor %}
+                </div>
+                <p>{{ block.settings.testimonial }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<style>
+    .testimonials-advanced-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 20px;
+    }
+
+    .testimonial-card {
+    
+    width: 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 40px 12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+    transform: translateY(-5px);
+    }
+
+    .testimonial-card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    }
+
+    .testimonial-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    }
+
+    .testimonial-content .stars {
+    margin-bottom: 10px;
+    color: #FFD700;
+    }
+
+    .testimonial-content p {
+    font-style: italic;
+    color: #444;
+    }
+
+    .product.gif-wrapper {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding: 40px 20px;
+    }
+
+    .product-gif-wrapper img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .gif-title {
+        font-size: 2.3rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+</style>

@@ -1,0 +1,65 @@
+.glamour-intro {
+ padding: 4rem 2rem;
+ max-width: 1200px;;   
+ margin: auto;
+ text-align: center;
+}
+
+.section-label {
+    color: #799268;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.intro-header h2 {
+    font-size: 50px;
+    margin: 0.5rem 0;
+    font-weight: bold;
+}
+
+.intro-header .description {
+    max-width: 700px;
+    margin: auto;
+    font-size: 16px;
+    color: #555;
+}
+
+.intro-features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    margin: 3rem 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 2rem  0;
+}
+
+.feature-item img {
+    width: 48px;
+    margin-bottom: 0.5rem;
+}
+
+.intro-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.intro-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.intro-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.intro-card p {
+    color: #666;
+    font-size: 0..95rem;
+}

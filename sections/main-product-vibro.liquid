@@ -1,27 +1,187 @@
-<div class="product-vibro-page">
-  <!-- Galería de imágenes -->
+<div class="vibro-product-container">
+  <!-- Galería Sticky (imagen + miniaturas) -->
   <div class="vibro-gallery">
-    {% for media in product.media %}
-      <img src="{{ media | image_url: '800x' }}" alt="{{ media.alt | escape }}">
-    {% endfor %}
+    <div class="vibro-sticky-gallery">
+      <div class="vibro-gallery-grid">
+        <div class="vibro-thumbnails">
+          {% for media in product.media %}
+            <img
+              class="vibro-thumb"
+              src="{{ media.preview_image | image_url: width: 100 }}"
+              alt="{{ media.alt | escape }}"
+              data-image="{{ media.preview_image | image_url: width: 800 }}"
+            >
+          {% endfor %}
+        </div>
+        <div class="vibro-main-image">
+          <img id="mainImage" src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}">
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Información del producto -->
-  <div class="vibro-info">
+  <div class="vibro-product-info">
     <h1>{{ product.title }}</h1>
     {% render 'price', product: product %}
     <p>⭐ 987 Reviews</p>
-  </div>
 
-  <!-- Formulario de compra -->
-  <form method="post" action="/cart/add">
-    <select name="id">
-      {% for v in product.variants %}
-        <option value="{{ v.id }}">{{ v.title }} - {{ v.price | money }}</option>
-      {% endfor %}
-    </select>
-    <button type="submit">Add to cart</button>
-  </form>
+    <form method="post" action="/cart/add">
+      <select name="id">
+        {% for v in product.variants %}
+          <option value="{{ v.id }}">{{ v.title }} - {{ v.price | money }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit" class="product-form__submit">Add to cart</button>
+
+      <div class="product-gif-wrapper">
+        <h2 class="gif-title">Estilo en cada paso</h2>
+        <img src="https://www.fullress.com/wp-content/uploads/2016/11/20161120-d1.gif" alt="Zapatillas en accion">
+      </div>
+
+      <!-- Beneficios visibles abajo del botón -->
+      <div class="benefits-section">
+        <div class="benefit">
+          <div class="benefit-icon">
+            <!-- Ícono SVG de ejemplo -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="benefit-icon-svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75 11.25 15 15 9.75" />
+            </svg>
+          </div>
+          <h3>Garantía total</h3>
+          <p>Tu compra está protegida y asegurada.</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="benefit-icon-svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12" />
+            </svg>
+          </div>
+          <h3>Envío rápido</h3>
+          <p>Despacho en 24h desde nuestros centros logísticos.</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="benefit-icon-svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75 11.25 15 15 9.75" />
+            </svg>
+          </div>
+          <h3>Pago seguro</h3>
+          <p>Múltiples métodos de pago 100% protegidos.</p>
+        </div>
+      </div>
+    </form>
+
+    <!-- Beneficios secundarios -->
+    <div class="vibro-benefits">
+      <div class="benefit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="vibro-benefit-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <h3>Resultados visibles</h3>
+        <p>Los clientes notan mejoras en solo 7 días.</p>
+      </div>
+
+      <div class="benefit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="vibro-benefit-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.1 0 2-.672 2-1.5s-.9-1.5-2-1.5-2 .672-2 1.5.9 1.5 2 1.5zM12 14.5v4m0-4c-1.1 0-2-.672-2-1.5s.9-1.5 2-1.5 2 .672 2 1.5-.9 1.5-2 1.5z" />
+        </svg>
+        <h3>Diseño ergonómico</h3>
+        <p>Cómodo para cualquier rutina diaria.</p>
+      </div>
+
+      <div class="benefit">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="vibro-benefit-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 10h8l3-10h4" />
+        </svg>
+        <h3>Compra garantizada</h3>
+        <p>Devolución gratuita dentro de 15 días si no estás conforme.</p>
+      </div>
+    </div>
+
+    <div class="vibro-before-after">
+      <h2>Tranforma tu estilo</h2>
+      <p class="subtitle">Descubre cómo se ve tu look con los Adidas Forum Mid</p>
+
+      <div class="before-after-row">
+        <div class="before-after-item">
+          <img src="https://cdn.shopify.com/s/files/1/0722/9603/8500/files/antes.jpg?v=1753215300" alt="antes de usar">
+          <div class="caption">Anter: un look común, sin impacto.</div>
+        </div>
+        <div class="before-after-item">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0722/9603/8500/files/despues.jpg?v=1753214940"
+            alt="despues de usar"
+          >
+          <div class="caption">Después: con más presencia y estilo.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="vibro-how-to-use">
+      <h2>¿Cómo usarlo?</h2>
+      <p>Sigue estos simples pasos para sacarles el maximo provecho</p>
+
+      <div class="how-to-steps">
+        <div class="how-step">
+          <img src="https://cdn.shopify.com/s/files/1/0722/9603/8500/files/step1.avif?v=1753220881" alt="Paso 1">
+          <h3>Póntelos Cómodamente</h3>
+          <p>Colócate tus Adidas Forum Mid con facilidad y empieza el día con el pie derecho.</p>
+        </div>
+
+        <div class="how-step">
+          <img src="https://cdn.shopify.com/s/files/1/0722/9603/8500/files/outfit.jpg?v=1753220702" alt="Paso 2">
+          <h3>Combínalos con tu outfit</h3>
+          <p>Luce un estilo urbano y moderno combinando tus Adidas con tu ropa favorita.</p>
+        </div>
+
+        <div class="how-step">
+          <img src="https://cdn.shopify.com/s/files/1/0722/9603/8500/files/step3.jpg?v=1753221282" alt="Paso 3">
+          <h3>Sal con seguridad</h3>
+          <p>Muévete con confianza y estilo en cada paso que des.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 {{ 'component-vibro.css' | asset_url | stylesheet_tag }}
+{{ 'component-product-vibro.js' | asset_url | script_tag }}

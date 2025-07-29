@@ -1,0 +1,114 @@
+/* General Section Styles */
+.booking-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.booking-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title + Subtitle */
+.booking-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #999;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.booking-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 40px;
+}
+
+/* Booking Cards Grid */
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Booking Card Styles */
+.booking-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.booking-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px;
+  margin-bottom: 0;
+  color: #222;
+}
+
+.card-details {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 20px 10px 20px;
+}
+
+.card-description {
+  font-size: 15px;
+  color: #444;
+  margin: 0 20px 20px 20px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+/* Button */
+.booking-button {
+  display: inline-block;
+  margin: 0 20px 20px 20px;
+  padding: 12px 20px;
+  background-color: #00a97f;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+  background-color: #008f6a;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  .booking-title {
+    font-size: 28px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+}

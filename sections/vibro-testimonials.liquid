@@ -1,0 +1,42 @@
+{% schema %}
+{
+    "name": "Testimonios",
+    "settings": [],
+    "blocks": [
+        {
+        "type": "testimonial",
+        "name": "Testimonio",
+        "settings": [
+            {
+            "type": "textarea",
+            "id": "texto",
+            "label": "Texto del testimonio"
+            },
+            {
+            "type": "text",
+            "id": "autor",
+            "label": "Autor"
+            }
+        ]
+        }
+    ],
+    "max_blocks": 10,
+    "presets": [
+        {
+        "name": "Testimonios"
+        }
+    ]
+}
+{% endschema %}
+
+<div class="vibro-testimonials">
+    <h2>Lo que dicen nuestro clientes</h2>
+    <div class="testimonial-slider">
+        {% for block in section.blocks %}
+            <div class="testimonial">
+                <p>{{ block.settings.texto }}</p>
+                <div class="author">- {{ block.settings.autor }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>

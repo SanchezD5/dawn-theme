@@ -1,0 +1,54 @@
+.glamour-hero {
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    color: white;
+}
+
+.glamour-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.glamour-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: auto;
+}
+
+.glamour-hero-content h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+color: aliceblue;
+font-weight: bold;
+}
+
+.glamour-hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #ffad39;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #ff7300;
+}

@@ -1,0 +1,98 @@
+{% schema %}
+{
+    "name": "Booking Grid",
+    "settings": [
+        {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Booking"
+        },
+        {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Book Your Dream Vacation Now"
+                }
+    ],
+    "blocks": [
+        {
+        "type": "booking_item",
+        "name": "Booking Item",
+        "settings": [
+            {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+            },
+            {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Bell Glamp One"
+            },
+            {
+            "type": "text",
+            "id": "details",
+            "label": "Details",
+            "default": "10 Personas | 25m2"
+            },
+            {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu ipsum volutpat, maximus lorem sit amet, ullamcorper odio. Vivamus eu ultrices lorem, sed blandit magna. Nullam feugiat quam quis venenatis blandit. "
+
+            },
+            {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "Check Availability"
+            },
+            {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+            }
+        ]
+        }
+    ],
+    "max_blocks": 4,
+    "presets": [
+        {
+        "name": "Booking Grid"
+        }
+    ]
+}
+{% endschema %}
+
+<section class="booking-section">
+  <div class="booking-container">
+    {% if section.settings.subtitle != blank %}
+      <p class="booking-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      <h2 class="booking-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="booking-grid">
+      {% for block in section.blocks %}
+        <div class="booking-card">
+          {%- if block.settings.image != blank -%}
+            <img src="{{ block.settings.image | image_url: width: 800 }}" alt="{{ block.settings.title }}">
+          {%- endif -%}
+          <h3 class="card-title">{{ block.settings.title }}</h3>
+          <p class="card-details">{{ block.settings.details }}</p>
+          <p class="card-description">{{ block.settings.description }}</p>
+          {% if block.settings.button_link != blank %}
+            <a href="{{ block.settings.button_link }}" class="booking-button">
+              {{ block.settings.button_text }}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ 'booking-grid.css' | asset_url | stylesheet_tag }}

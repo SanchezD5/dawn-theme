@@ -1,0 +1,167 @@
+{% schema %}
+{
+  "name": "Preguntas Frecuentes",
+  "tag": "section",
+  "class": "vibro-faq",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Pregunta",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Pregunta"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Respuesta"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Preguntas Frecuentes",
+      "category": "Contenido"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="faq-container">
+  <h2>Preguntas Frecuentes</h2>
+  <div class="faq-list">
+    {% for block in section.blocks %}
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-circle-question-mark-icon lucide-circle-question-mark"
+            >
+              <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>
+            </svg>
+          </span>
+          {{ block.settings.question }}
+          <span class="arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-chevron-right-icon lucide-chevron-right"
+            >
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </span>
+        </button>
+        <div class="faq-answer">{{ block.settings.answer }}</div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .faq-question {
+    background: #f5f5f5;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 8px;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+    padding: 0 15px;
+    opacity: 0;
+  }
+
+  .faq-item.open .faq-question {
+    background-color: #f0f8ff;
+    border-left: 4px solid #007aff;
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    font-weight: bold;
+    position: relative;
+  }
+
+  .faq-question .icon {
+    width: 24px;
+    height: 24px;
+    color: #007aff;
+    display: flex;
+    align-items: center;
+  }
+
+  .faq-question .arrow {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    margin-left: auto;
+  }
+
+  /*Cuando este abierto gira la flecha 90 grados*/
+  .faq-item.open .faq-question .arrow {
+    transform: rotate(90deg);
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.8s ease, opacity 0.3s ease;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.faq-item');
+
+    items.forEach((item) => {
+      const question = item.querySelector('.faq-question');
+      question.addEventListener('click', () => {
+        // Cierra los demás
+        items.forEach((i) => {
+          if (i !== item) {
+            i.classList.remove('open');
+          }
+        });
+
+        // Abre/cierra el actual
+        item.classList.toggle('open');
+      });
+    });
+  });
+</script>

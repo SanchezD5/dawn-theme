@@ -1,0 +1,119 @@
+{% schema %}
+{
+  "name": "Glamour Intro",
+  "tag": "section",
+  "class": "glamour-intro-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Etiqueta superior",
+      "default": "ABOUT"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Titulo principal",
+      "default": "Welcome to Gamour Camping Ground"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Descripcion",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer egestas nisi nec libero fermentum, a varius tortor venenatis. Sed vitae dolor interdum, semper leo at, tristique nisl. Maecenas vitae luctus tortor, vel efficitur sem. Maecenas tincidunt sem nec magna gravida varius. Aliquam nec ligula a augue congue condimentum. Pellentesque eget lorem euismod, viverra nisl in, viverra velit.  "
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "icono + texto",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icono"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Texto",
+          "default": "30 CAMPER SITES"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Card de imagen",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Imagen"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Titulo",
+          "default": "Camping Area For Tents"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Descripcion",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer egestas nisi nec libero fermentum, a varius tortor venenatis. Sed vitae dolor interdum."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Glamour Intro",
+      "blocks": [
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "feature" },
+        { "type": "card" },
+        { "type": "card" },
+        { "type": "card" }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="glamour-intro">
+  <div class="intro-header">
+    <p class="section-label">{{ section.settings.section_label }}</p>
+    <h2>{{ section.settings.main_title }}</h2>
+    <p class="description">{{ section.settings.description }}</p>
+  </div>
+
+  <div class="intro-features">
+    {% for block in section.blocks %}
+      {% if block.type == 'feature' %}
+        <div class="feature-item">
+          {% if block.settings.icon %}
+            <img src="{{ block.settings.icon | image_url: width: 60}}" alt="">
+          {% endif %}
+          <p>{{ block.settings.label }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="intro-cards">
+    {% for block in section.blocks %}
+      {% if block.type == 'card' %}
+        <div class="intro-card">
+          <img src="{{ block.settings.image | image_url: width: 500 }}" alt="">
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+
+{{ 'glamour-intro.css' | asset_url | stylesheet_tag }}
