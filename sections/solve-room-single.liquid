@@ -1,0 +1,58 @@
+<section class="room-single">
+  <div class="container room-single-content">
+    {% if section.settings.image != blank %}
+      <img
+        src="{{section.settings.image | image_url: 'master' }}"
+        alt="{{ section.settings.title }}"
+        class="room-single-image"
+      >
+    {% endif %}
+    <div class="room-single-text">
+      <h1 class="room-single-title">{{ section.settings.title }}</h1>
+      <div class="room-single-description">
+        {{ section.settings.description }}
+      </div>
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="room-single-button">
+          {{ section.settings.button_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Room Single Content",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Main Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Modern Room"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>This is a modern, minimalistic room designed for comfort and peace.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Book Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+    }
+  ]
+}
+{% endschema %}

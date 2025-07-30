@@ -1,0 +1,54 @@
+.solve-rooms-section {
+    padding: 60px 0;
+}
+
+.rooms-title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.room-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.room-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+    border-radius: 50px;
+}
+
+.room-item:hover .room-image {
+    transform: scale(1.05);
+}
+
+.room-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+}
+
+.room-label {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffe3e3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.room-link {
+    font-size: 1rem;
+    text-decoration: underline;
+    color: #adadad;
+}

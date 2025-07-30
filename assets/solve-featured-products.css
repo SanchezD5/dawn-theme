@@ -1,0 +1,61 @@
+.solve-featured-products {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.solve-featured-products .featured-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.featured-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.featured-item {
+    max-width: 200px;
+    position: relative;
+}
+
+.featured-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 526px;
+    margin: 0 auto 20px;
+    border-radius: 50px;
+    aspect-ratio: 526 / 788;
+    overflow: hidden;
+}
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.featured-text h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.featured-text p {
+    color: #555;
+    margin-top: 5px;
+}

@@ -1,5 +1,8 @@
 {
   "sections": {
+
+    /*
+    
     "main-hero": {
       "type": "glamour-hero",
       "settings": {
@@ -117,15 +120,42 @@
       },
       "blocks": {},
       "block_order": []
+    },
+
+    */
+
+    "solve-hero": {
+      "type": "solve-hero",
+      "settings":{
+        "title": "Welcome to solve",
+        "subtitle": "Discover our new elegant collection",
+        "button_label": "Shop Now",
+        "button_link": "/collection/all"
+      }
+    },
+
+    "solve-featured-products": {
+      "type": "solve-featured-products",
+    },
+
+    "solve-text-columns": {
+      "type": "solve-text-columns"
+    },
+
+    "solve-rooms": {
+      "type": "solve-rooms"
     }
 
   },
   "order": [
+    /*
     "main-hero",
     "glamour-intro",
     "activity-icons",
     "booking",
     "glamour-articles",
     "our-gallery"
+    */
+    "solve-hero", "solve-featured-products", "solve-text-columns", "solve-rooms"  
   ]
 }

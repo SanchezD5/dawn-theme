@@ -1,0 +1,47 @@
+<section class="solve-hero-fullwidth" style="background-image: url({{ section.settings.image | img_url: 'master' }});">
+  <div class="hero-overlay">
+    <h1 class="hero-title">{{ section.settings.title }}</h1>
+    <a href="{{ section.settings.button_link }}" class="hero-button">
+      {{ section.settings.button_label }}
+    </a>
+  </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Solve - Hero",
+        "settings": [
+            {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Hero Background Image"
+            },
+            {
+            "type": "text",
+            "id": "title",
+            "label": "Hero Title",
+            "default": "DESIGN FURNITURE"
+            },
+            {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Text",
+            "default": "Shop Now"
+            },
+            {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link",
+            "default": "/collections/all"
+            }
+        ],
+        "presets": [
+            {
+            "name": "Solve Hero"
+            }
+        ]
+    }
+{% endschema %}
+
+{{ 'solve-section.css' | asset_url | stylesheet_tag }}
+

@@ -1,0 +1,83 @@
+<section class="solve-featured-products">
+  <div class="container">
+    <h2 class="featured-title">{{ section.settings.title }}</h2>
+    <div class="featured-grid">
+      {% for block in section.blocks %}
+        <div class="featured-item">
+          <div class="featured-image-wrapper">
+            <img
+              src="{{ block.settings.image | img_url: 'medium' }}"
+              alt="{{ block.settings.title }}"
+              class="featured-image"
+            >
+            {% if block.settings.is_new %}
+              <span class="featured-badge">NEW</span>
+            {% endif %}
+          </div>
+          <div class="featured-text">
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.price }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Solve - Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_item",
+      "name": "product",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Product Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Product Title",
+          "default": "Modern Chair"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "120.00"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Solve Featured Products",
+      "blocks": [
+        {
+          "type": "product_item"
+        },
+        {
+          "type": "product_item"
+        },
+        {
+          "type": "product_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'solve-featured-products.css' | asset_url | stylesheet_tag }}
