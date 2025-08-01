@@ -1,0 +1,48 @@
+.room-description-section {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.room-description-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.room-description-section .left-col {
+    text-align: left;
+}
+
+.room-description-section .right-col {
+    text-align: left;
+}
+
+.room-description-section .left-title {
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+.room-description-section .right-text {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .room-description-section .container {
+    grid-template-columns: 1fr;
+  }
+
+  .room-description-section .left-col,
+  .room-description-section .right-col {
+    text-align: center;
+  }
+
+  .room-description-section .left-title {
+    font-size: 2.2rem;
+  }
+}

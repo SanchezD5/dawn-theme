@@ -145,6 +145,7 @@
     "solve-rooms": {
       "type": "solve-rooms"
     }
+    
 
   },
   "order": [
@@ -156,6 +157,6 @@
     "glamour-articles",
     "our-gallery"
     */
-    "solve-hero", "solve-featured-products", "solve-text-columns", "solve-rooms"  
+    "solve-hero", "solve-featured-products", "solve-text-columns", "solve-rooms"
   ]
 }

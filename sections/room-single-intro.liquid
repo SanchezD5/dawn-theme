@@ -1,0 +1,76 @@
+<div class="room-single-intro fade-in-up">
+  <div class="content-container">
+    <h1 class="room-title">{{ section.settings.title }}</h1>
+    <p class="room-description">{{ section.settings.description }}</p>
+  </div>
+
+  <div class="image-container">
+    <img 
+      src="{{ section.settings.image | image_url: width: 1200 }}" 
+      alt="Room Image"
+      loading="lazy"
+    >
+    <div class="product-tag">
+      <img 
+        src="{{ section.settings.tag_image | image_url: width: 80 }}" 
+        alt="Sofa"
+        loading="lazy"
+      >
+      <div class="product-info">
+        <strong>{{ section.settings.product_name }}</strong>
+        <span>{{ section.settings.product_price }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Room Single Into",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titulo",
+      "default": "Oslo"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Descripcion",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed faucibus turpis in eu mi bibendum neque."
+    },
+    {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Imagen principal"
+    },
+    {
+    "type": "image_picker",
+    "id": "tag_image",
+    "label": "Imagen del producto (etiqueta)"
+    },
+    {
+    "type": "text",
+    "id": "product_name",
+    "label": "Nombre del producto",
+    "default": "Single Sofa"
+    },
+    {
+    "type": "text",
+    "id": "product_price",
+    "label": "Precio del producto",
+    "default": "$69.00 USD"
+    }
+  ],
+  "presets": [
+    {
+    "name": "Room Single Intro"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'room-single-intro.css' | asset_url | stylesheet_tag }}
+{{ 'fade-in-up.js' | asset_url | script_tag }}

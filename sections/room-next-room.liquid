@@ -1,0 +1,44 @@
+<div class="room-next-room">
+  <div class="next-room-wrapper">
+    <div class="next-room-info">
+      <p class="label">Next Room</p>
+      <h2 class="next-room-title">{{ section.settings.next_room_title }}</h2>
+    </div>
+    <div class="next-room-image">
+        <a href="{{ section.setings.next_room_url }}" class="next-room-image-link" data-tooltip="Next Room">
+      <img src="{{ section.settings.next_image | image_url: width: 600 }}" alt="Next Room">
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Next Room Navigation",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "next_image",
+      "label": "Imagen del proximo cuarto"
+    },
+    {
+      "type": "text",
+      "id": "next-room-title",
+      "label": "Titulo del proximo cuarto",
+      "default": "Oslo"
+    },
+    {
+      "type": "url",
+      "id": "next-room-url",
+      "label": "Enlace al proximo cuarto"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Next Room"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'room-next-room.css' | asset_url | stylesheet_tag }}

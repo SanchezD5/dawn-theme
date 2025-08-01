@@ -1,0 +1,37 @@
+<div class="room-description-section">
+  <div class="container">
+    <div class="left-col">
+      <h2 class="left-title">{{ section.settings.left_title }}</h2>
+    </div>
+    <div class="right-col">
+      <div class="right-text">{{ section.settings.right_text }}</div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Room Description Block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "left_title",
+      "label": "Titulo (lado izquierdo)",
+      "default": "Experience the confort of oslo"
+    },
+    {
+      "type": "richtext",
+      "id": "right_text",
+      "label": "Texto descriptivo (Lado derecho)",
+      "default": "<p>Our Oslo room offers a unique blend of modern design and cozy comfort. Enjoy peaceful mornings and luxurious evenings with our premium amenities and exquisite interiors.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Room Description blockeeee"
+    }
+  ]
+}
+{% endschema %}
+
+{{ 'room-description-section.css' | asset_url | stylesheet_tag }}
