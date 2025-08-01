@@ -1,9 +1,27 @@
 {
-  "name": "Room – Lisbon",
+  "name": "Room Single Page",
   "sections": {
-    "main": {
-      "type": "solve-room-lisbon"
+    "room-intro": {
+      "type": "room-single-intro",
+      "settings": {
+        "title": "Oslo",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed faucibus turpis in eu mi bibendum neque.",
+        "product_name": "Single Sofa",
+        "product_price": "$69.00 USD"
+      }
+    },
+
+    "room-single-description": {
+      "type": "room-single-description"
+    },
+
+    "room-next-room": {
+      "type": "room-next-room"
     }
   },
-  "order": ["main"]
+  "order": [
+    "room-intro",
+    "room-single-description",
+    "room-next-room"
+  ]
 }
