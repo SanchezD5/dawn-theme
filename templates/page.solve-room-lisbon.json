@@ -2,12 +2,10 @@
   "name": "Room Single Page",
   "sections": {
     "room-intro": {
-      "type": "room-single-intro",
+      "type": "room-single-introPage",
       "settings": {
         "title": "Oslo",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed faucibus turpis in eu mi bibendum neque.",
-        "product_name": "Single Sofa",
-        "product_price": "$69.00 USD"
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed faucibus turpis in eu mi bibendum neque."
       }
     },
 

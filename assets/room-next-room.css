@@ -1,72 +1,75 @@
 .room-next-room {
-    max-width: 1200px;
-    margin: 5rem auto;
-    display: flex;
-    justify-content: center;
-    padding: 0 2rem;
-    text-align: center;
+  max-width: 1000px;
+  margin: 6rem auto;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  text-align: center;
 }
 
 .next-room-wrapper {
-    position: relative;
-    display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .next-room-info {
-    position: absolute;
-    top: -60px;
-    left: 50%;
-    transform: translate(-50%);
-    text-align: center;
+  margin-bottom: 2rem;
 }
 
 .label {
-    font-size: 4rem;
-    color: #b94d1b;
-    text-decoration: uppercase;
-    letter-spacing: 1.5px;
-    margin: 5rem;
-    font-weight: bold;
+  font-size: 2rem;
+  color: #b94d1b;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .next-room-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+  color: #222;
 }
 
 .next-room-image img {
-    width: 400px;
-    height: 400px;
-    border-radius: 100% ;
-    object-fit: cover;
-    color:  rgb(255, 255, 255);
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.next-room-image-link:hover img {
+  transform: scale(1.05);
 }
 
 .next-room-image-link {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
 .next-room-image-link::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    bottom: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #111;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 3rem;
-    white-space: nowrap;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 10;
+  content: attr(title);
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 1.4rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
 }
 
 .next-room-image-link:hover::after {
-    opacity: 1;
+  opacity: 1;
 }

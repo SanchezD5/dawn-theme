@@ -1,5 +1,5 @@
 .room-description-section {
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 5rem 2rem;
 }
@@ -20,15 +20,15 @@
 }
 
 .room-description-section .left-title {
-    font-size: 3rem;
+    font-size: 6rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 500;
 }
 
 .room-description-section .right-text {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: #444;
-    line-height: 1.8;
+    line-height: 2.0;
 }
 
 /* Responsive */

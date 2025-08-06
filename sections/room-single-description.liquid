@@ -1,10 +1,10 @@
 <div class="room-description-section">
   <div class="container">
     <div class="left-col">
-      <h2 class="left-title">{{ section.settings.left_title }}</h2>
+      <h2 class="left-title">{{ page.metafields.custom.text_left | default: section.settings.left_title }}</h2>
     </div>
     <div class="right-col">
-      <div class="right-text">{{ section.settings.right_text }}</div>
+      <div class="right-text">{{ page.metafields.custom.text_right | default: section.settings.right_text | metalfield_tag }}</div>
     </div>
   </div>
 </div>
@@ -28,7 +28,7 @@
   ],
   "presets": [
     {
-      "name": "Room Description blockeeee"
+      "name": "Room Description block"
     }
   ]
 }
