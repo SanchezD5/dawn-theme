@@ -1,0 +1,24 @@
+{% comment %}
+  Hero principal de la lnding
+{% endcomment %}
+
+<section class="uptech-hero">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1>{{ page.metafields.uptech.hero_title | default: 'Titulo de ejemplo' }}</h1>
+      <p>{{ page.metafields.uptech.hero_subtitle | default: 'Subtitulo de ejemplo' }}</p>
+      {% if page.metafields.uptech.hero_button_text %}
+        <a href="{{ page.metafields.uptech.hero_button_link }}" class="hero-btn">
+          {{ page.metafields.uptech.hero_button_text }}
+        </a>
+      {% endif %}
+    </div>
+    {%- if page.metafields.uptech.hero_image -%}
+        <div class="hero-image">
+            <img src="{{ page.metafields.uptech.hero_image }}">
+        </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{{ 'uptech-hero.css' | asset_url | stylesheet_tag }}
