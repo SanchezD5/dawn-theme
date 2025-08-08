@@ -15,7 +15,7 @@
     </div>
     {%- if page.metafields.uptech.hero_image -%}
         <div class="hero-image">
-            <img src="{{ page.metafields.uptech.hero_image }}">
+            <img src="{{ page.metafields.uptech.hero_image | img_url: 'master'}}" alt="Hero Image">
         </div>
     {%- endif -%}
   </div>
